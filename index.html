@@ -2,150 +2,150 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js</title>
+    <title>reveal.js</title>
 
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
 
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-		document.getElementsByTagName('head')[0].appendChild(link);
-	</script>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
 </head>
 
 <body>
-	<div class="reveal">
-		<div class="slides">
-			<section>
-				<section>Web Components Everywhere?</section>
-				<section>
-					<a href="https://custom-elements-everywhere.com/" target="_blank">https://custom-elements-everywhere.com/</a>
-					<p class="fragment fade-left">Cannot just use any web components in React</p>
-					<p class="fragment fade-left">Cannot even just use any web components in Polymer!</p>
-				</section>
-				<section>
-					Criticism of Web Components e.g.
-					<ul>
-						<li>
-							<a href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">https://dev.to/richharris/why-i-don-t-use-web-components-2cia</a>
-						</li>
-						<li>
-							<a href="https://thenewobjective.com/a-criticism-of-web-components/">https://thenewobjective.com/a-criticism-of-web-components/</a>
-						</li>
-						<li>
-							<a href="https://adamsilver.io/articles/the-problem-with-web-components/">https://adamsilver.io/articles/the-problem-with-web-components/</a>
-						</li>
-					</ul>
-				</section>
-				<section>
-					<p>The criticism helps to think about the place and role of web components</p>
-					<ul>
-						<li>
-							<a href="https://dev.to/ionic/why-we-use-web-components-2c1i">https://dev.to/ionic/why-we-use-web-components-2c1i</a>
-						</li>
-						<li>
-							<a href="https://viljamis.com/2019/why-we-use-web-components/">https://viljamis.com/2019/why-we-use-web-components/"</a>
-						</li>
-					</ul>
-				</section>
-				<section>
-					<p>No progressive enhancement:</p>
-					<p>Javascript required</p>
-					<br>
-					<p>...but it is possible to do Server Side Rendering (e.g. using Stencil)</p>
-				</section>
-				<section>
-					CSS in JS
-					<pre><code data-trim>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <section>Web Components Everywhere?</section>
+            <section>
+                <a href="https://custom-elements-everywhere.com/" target="_blank">https://custom-elements-everywhere.com/</a>
+                <p class="fragment fade-left">Cannot just use any web components in React</p>
+                <p class="fragment fade-left">Cannot even just use any web components in Polymer!</p>
+            </section>
+            <section>
+                Criticism of Web Components e.g.
+                <ul>
+                    <li>
+                        <a href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">https://dev.to/richharris/why-i-don-t-use-web-components-2cia</a>
+                    </li>
+                    <li>
+                        <a href="https://thenewobjective.com/a-criticism-of-web-components/">https://thenewobjective.com/a-criticism-of-web-components/</a>
+                    </li>
+                    <li>
+                        <a href="https://adamsilver.io/articles/the-problem-with-web-components/">https://adamsilver.io/articles/the-problem-with-web-components/</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p>The criticism helps to think about the place and role of web components</p>
+                <ul>
+                    <li>
+                        <a href="https://dev.to/ionic/why-we-use-web-components-2c1i">https://dev.to/ionic/why-we-use-web-components-2c1i</a>
+                    </li>
+                    <li>
+                        <a href="https://viljamis.com/2019/why-we-use-web-components/">https://viljamis.com/2019/why-we-use-web-components/"</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p>No progressive enhancement:</p>
+                <p>Javascript required</p>
+                <br>
+                <p>...but it is possible to do Server Side Rendering (e.g. using Stencil)</p>
+            </section>
+            <section>
+                CSS in JS
+                <pre><code data-trim>
 					const shadowRoot = document.getElementById('example')
 								.attachShadow({ mode: 'open' });
 					shadowRoot.innerHTML = `
 					<style>
 					  #panels {
-						background: white;
-						border-radius: 3px;
-						padding: 16px;
-						height: 250px;
-						overflow: auto;
-					  }
+                          background: white;
+                          border-radius: 3px;
+                          padding: 16px;
+                          height: 250px;
+                          overflow: auto;
+                      }
 					  </style>
 					`;
 					  </code></pre>
-					<br>
-					<p>...but Constructible Stylesheets is underway</p>
-				</section>
-				<section>Platform bloat</section>
-				<section>
-					Polyfills
-					<br>
-					<p>...but rapidly supported natively by browers (only Safari seems to be lagging)</p>
-				</section>
-				<section>
-					Slotted content loads eagerly
-					<pre><code data-trim>
+                <br>
+                <p>...but Constructible Stylesheets is underway</p>
+            </section>
+            <section>Platform bloat</section>
+            <section>
+                Polyfills
+                <br>
+                <p>...but rapidly supported natively by browers (only Safari seems to be lagging)</p>
+            </section>
+            <section>
+                Slotted content loads eagerly
+                <pre><code data-trim>
 					<one-dialog>
 					    <span slot="heading">Hello world</span>
 					</one-dialog>
 					</code></pre>
-					<br>
-					<p>...so maybe don't use slotted content when lazy loading is needed</p>
-				</section>
-				<section>
-					<p>Confusion between props and attributes</p>
-					<p>They seem to be the same:</p>
-					<pre><code data-trim>
+                <br>
+                <p>...so maybe don't use slotted content when lazy loading is needed</p>
+            </section>
+            <section>
+                <p>Confusion between props and attributes</p>
+                <p>They seem to be the same:</p>
+                <pre><code data-trim>
 					const button = document.createElement('button');
 
 					button.hasAttribute('disabled'); // false
 					button.disabled = true;
 					button.hasAttribute('disabled'); // true
-					
+
 					button.removeAttribute('disabled');
 					button.disabled; // false
 					</code></pre>
-				</section>
-				<section>
-					But not exactly:
-					<pre><code data-trim>
+            </section>
+            <section>
+                But not exactly:
+                <pre><code data-trim>
 					typeof button.disabled; // 'boolean'
 					typeof button.getAttribute('disabled'); // 'object'
-					
+
 					button.disabled = true;
 					typeof button.getAttribute('disabled'); // 'string'
 					</code></pre>
-				</section>
-				<section>
-					and some cases don't correspond at all:
-					<pre><code data-trim>
+            </section>
+            <section>
+                and some cases don't correspond at all:
+                <pre><code data-trim>
 					input = document.createElement('input');
 
 					input.getAttribute('value'); // null
 					input.value = 'one';
 					input.getAttribute('value'); // null
-					
+
 					input.setAttribute('value', 'two');
 					input.value; // 'one'
 					</code></pre>
-				</section>
-				<section>
-					Snippet from lit-element
-					<pre><code data-trim>
+            </section>
+            <section>
+                Snippet from lit-element
+                <pre><code data-trim>
 					/**
 					* Converts property values to and from attribute values.
 					*/
 					export const defaultConverter: ComplexAttributeConverter = {
-					
+
 						toAttribute(value: unknown, type?: unknown): unknown {
 						switch (type) {
 							case Boolean:
@@ -158,7 +158,7 @@
 						}
 						return value;
 						},
-					
+
 						fromAttribute(value: string|null, type?: unknown) {
 						switch (type) {
 							case Boolean:
@@ -171,54 +171,143 @@
 						}
 						return value;
 						}
-					
+
 					};
 					</code></pre>
-				</section>
-				<section>Global namespace</section>
-				<section>
-					<p>When should we use web components?</p>
-					<ul>
-						<li class="fragment fade-in-then-semi-out">Only when it is re-used?</li>
-						<li class="fragment fade-in-then-semi-out">Also just for separating functionality?</li>
-						<li class="fragment fade-in-then-semi-out">Should a button be a web component?</li>
-						<li class="fragment fade-in-then-semi-out">Should a sortable table be a web component?</li>
-						<li class="fragment fade-in-then-semi-out">Should a feature such as customer search be a web component?</li>
-						<li class="fragment fade-in-then-semi-out">Should a page be a web component?</li>
-						<li class="fragment fade-in-then-semi-out">Should an app be a web component?</li>
-					</ul>
-					<p class="fragment fade-in-then-semi-out">Are we using lit-element as library, framework or platform?</p>
-					<p class="fragment fade-in-then-semi-out">Or all of the above?</p>
-				</section>
-				<section>
-					<p>In any case, web components are pretty powerful re-usable components:</p>
-					<a href="https://custom-elements-everywhere.com/" target="_blank">https://custom-elements-everywhere.com/</a>
-				</section>
+            </section>
+            <section>Global namespace</section>
+            <section>
+                <p>When should we use web components?</p>
+                <ul>
+                    <li class="fragment fade-in-then-semi-out">Only when it is re-used?</li>
+                    <li class="fragment fade-in-then-semi-out">Also just for separating functionality?</li>
+                    <li class="fragment fade-in-then-semi-out">Should a button be a web component?</li>
+                    <li class="fragment fade-in-then-semi-out">Should a sortable table be a web component?</li>
+                    <li class="fragment fade-in-then-semi-out">Should a feature such as customer search be a web
+                        component?
+                    </li>
+                    <li class="fragment fade-in-then-semi-out">Should a page be a web component?</li>
+                    <li class="fragment fade-in-then-semi-out">Should an app be a web component?</li>
+                </ul>
+            </section>
+            <section>
+                <p class="fragment fade-in-then-semi-out">Are we using lit-element as library, framework or
+                    platform?</p>
+                <p class="fragment fade-in-then-semi-out">Or all of the above?</p>
+            </section>
+            <section>
+                <p>In any case, web components are pretty powerful re&#8209;usable components:</p>
+                <a href="https://custom-elements-everywhere.com/" target="_blank">https://custom-elements-everywhere.com/</a>
+            </section>
+        </section>
+        <section>
+            <section>Vue.js</section>
+            <section>
+                <ul>
+                    <li class="fragment fade-in-then-semi-out">Not exactly new: released in 2014</li>
+                    <li class="fragment fade-in-then-semi-out">But younger than Angular and React and gaining a lot of traction</li>
+					<li class="fragment fade-in-then-semi-out">Modular, less opinionated than Angular</li>
+					<li class="fragment fade-in-then-semi-out">Some say it has the best parts of Angular and React</li>
+					<li class="fragment fade-in-then-semi-out">Some say it has a less steep learning curve than Angular and React</li>
+                </ul>
+            </section>
+            <section>
+				<pre><code data-trim>
+				<div id="app">
+				  {{ message }}
+				</div>
+				</code></pre>
+				<pre><code data-trim>
+				var app = new Vue({
+				  el: '#app',
+				  data: {
+				    message: 'Hello Vue!'
+				  }
+				})
+				</code></pre>
+            </section>
+			<section>
+				HTML not in Javascript:
+				<pre><code data-trim>
+				<div id="app-4">
+				  <ol>
+					<li v-for="todo in todos">
+					  {{ todo.text }}
+					</li>
+				  </ol>
+				</div>
+				</code></pre>
 			</section>
 			<section>
-				<section>Vue.js</section>
-				<section>Not new </section>
+				CSS not in Javascript:
+				<pre><code data-trim>
+				<style scoped>
+				  @media (min-width: 250px) {
+					  .list-container:hover {
+						  background: orange;
+					  }
+				  }
+				</style>
+				</code></pre>
 			</section>
+			<section>
+				Single File Component, e.g. PersonGreeter.vue
+				<pre><code data-trim>
+				<template>
+					<h2>Hello, {{ personName }}!</h2>
+				</template>
+				<script>
+					module.exports = {
+						props: ['personName']
+					}
+				</script>
+				<style scoped>
+					h2 {
+						font-size: 40px;
+						color: mediumseagreen;
+					}
+				</style>
+				</code></pre>
+			</section>
+			<section>
+				Support for state management: Vuex (but also Redux)
+			</section>
+        </section>
+		<section>
+			<section>Web Assembly</section>
+            <section>
+                <ul>
+                    <li>Run compiled (assembly) code in the browser</li>
+                    <li>Very fast</li>
+                    <li>Program in any language (for which a compiler is available)</li>
+                </ul>
+            </section>
+            <section>
+                <a href="https://earth.google.com/web/@-2.13136518,-20.7329411,-10154.29550199a,21598549.36750889d,35y,-0h,0t,0r?beta=1">Google Earth</a>
+            </section>
+            <section>
+                <a href="https://wasmbyexample.dev/examples/hello-world/hello-world.rust.en-us.html">Wasm By Example</a>
+            </section>
+		</section>
+    </div>
+</div>
 
-		</div>
-	</div>
+<script src="js/reveal.js"></script>
 
-	<script src="js/reveal.js"></script>
-
-	<script>
-		// More info about config & dependencies:
-		// - https://github.com/hakimel/reveal.js#configuration
-		// - https://github.com/hakimel/reveal.js#dependencies
-		Reveal.initialize({
-			hash: true,
-			dependencies: [
-				{ src: 'plugin/markdown/marked.js' },
-				{ src: 'plugin/markdown/markdown.js' },
-				{ src: 'plugin/highlight/highlight.js' },
-				{ src: 'plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        hash: true,
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/highlight/highlight.js'},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+</script>
 </body>
 
 </html>
